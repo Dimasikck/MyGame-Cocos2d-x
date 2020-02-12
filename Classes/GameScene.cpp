@@ -180,6 +180,7 @@ bool GameScene::onContactBegin( cocos2d::PhysicsContact &contact ) {
 
     if ( ( PLAYER_COLLISION_BITMASK == a->getCollisionBitmask( ) && BOMB_COLLISION_BITMASK == b->getCollisionBitmask() ) || ( PLAYER_COLLISION_BITMASK == b->getCollisionBitmask( ) && BOMB_COLLISION_BITMASK == a->getCollisionBitmask() ) )
    {
+       SimpleAudioEngine::getInstance()->playEffect("sounds/Hit.mp3");
       auto scene = GameOverScene::createScene();
 
        Director::getInstance( )->replaceScene( TransitionFade::create( TRANSITION_TIME, scene ) );

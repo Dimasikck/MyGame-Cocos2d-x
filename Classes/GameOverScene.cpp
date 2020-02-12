@@ -44,7 +44,7 @@ bool GameOverScene::init()
     spriteBackground->setPosition( Point( visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y ) );
     this->addChild( spriteBackground );
     auto retryItem = MenuItemImage::create( "images/Retry Button.png", "images/Retry Button Clicked.png", CC_CALLBACK_1( GameOverScene::GoToGameScene, this ) );
-    retryItem->setPosition( Point( visibleSize.width / 2 + origin.x, visibleSize.height / 4 * 3 ) );
+    retryItem->setPosition( Point( visibleSize.width / 2 + origin.x, visibleSize.height * 0.68 ) );
     auto mainMenuItem = MenuItemImage::create( "images/Menu Button.png", "images/Menu Button Clicked.png", CC_CALLBACK_1( GameOverScene::GoToMainMenuScene, this ) );
     mainMenuItem->setPosition( Point( visibleSize.width / 2 + origin.x, visibleSize.height / 4 ) );
     auto menu = Menu::create( retryItem, mainMenuItem, NULL );

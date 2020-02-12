@@ -48,14 +48,18 @@ bool MainMenuScene::init()
             "images/Play Button.png",
             "images/Play Button Clicked.png",
             CC_CALLBACK_1( MainMenuScene::GoToGameScene, this ));
-    playItem->setPosition( Point( (visibleSize.width / 2 )+ origin.x, (visibleSize.height)/ 2 + origin.y ) );
+    playItem->setPosition( Point( (visibleSize.width / 2 )+ origin.x, (visibleSize.height)*0.45+ origin.y ) );
 
     auto menu = Menu::create( playItem, NULL );
     menu->setPosition( Point::ZERO );
 
 
     this->addChild( menu );
-    
+    auto mygameSprite = Sprite::create( "images/My Game.png" );
+    mygameSprite->setPosition(Vec2(origin.x + visibleSize.width/2,
+                                   origin.y + visibleSize.height*0.85 - mygameSprite->getContentSize().height));
+
+    this->addChild( mygameSprite );
     return true;
 }
 
